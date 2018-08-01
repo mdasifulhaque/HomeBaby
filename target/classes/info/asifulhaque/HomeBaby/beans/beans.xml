@@ -4,9 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean class="info.asifulhaque.HomeBaby.Patient" id="patientBeans">
+	<bean class="info.asifulhaque.HomeBaby.Patient" id="patientBeans"
+		scope="prototype" destroy-method="onDestroy" init-method="onCreate">
 		<constructor-arg name="patientId" value="2"></constructor-arg>
 		<constructor-arg name="patientName" value="Leemon"></constructor-arg>
+		<property name="address" ref="addressBeans"></property>
 	</bean>
 	<bean id="addressBeans" class="info.asifulhaque.HomeBaby.Address">
 		<constructor-arg name="houseName" value="Kalu Bari"></constructor-arg>

@@ -9,7 +9,6 @@ public class Address {
 
 	public Address(String houseName, String flatNo, String areaName, String policeStation, String district,
 			String division, String postCode) {
-		super();
 		this.houseName = houseName;
 		this.flatNo = flatNo;
 		this.areaName = areaName;

@@ -5,6 +5,12 @@ public class Patient {
 	private String patientName;
 	private Address address;
 	
+	public void onCreate() {
+		System.out.println("Patient Created:-"+this);
+	}
+	public void onDestroy() {
+		System.out.println("Patient Object Destroyed :( ");
+	}
 	public Patient() {
 		
 	}
@@ -12,6 +18,7 @@ public class Patient {
 	public Patient(int patientId, String patientName) {
 		this.patientId = patientId;
 		this.patientName = patientName;		
+	
 	}
 
 	public int getPatientId() {
