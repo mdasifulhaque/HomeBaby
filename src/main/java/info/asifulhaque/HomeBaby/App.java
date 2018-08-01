@@ -1,5 +1,8 @@
 package info.asifulhaque.HomeBaby;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  *
@@ -8,6 +11,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+      ApplicationContext context=new ClassPathXmlApplicationContext("info/asifulhaque/HomeBaby/beans/beans.xml");
+      Patient patient=(Patient) context.getBean("patientBeans");
+      patient.setPatientName("Harry Puttar");
+      System.out.println(patient);
+      
+      ((ClassPathXmlApplicationContext) context).close();
     }
 }
