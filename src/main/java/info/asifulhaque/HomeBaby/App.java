@@ -15,7 +15,8 @@ public class App
       Patient patient=(Patient) context.getBean("patientBeans");
       patient.setPatientName("Harry Puttar");
       System.out.println(patient);
-      
+      Address address=(Address) context.getBean("addressBeans");
+      System.out.println(address);
       ((ClassPathXmlApplicationContext) context).close();
     }
 }
