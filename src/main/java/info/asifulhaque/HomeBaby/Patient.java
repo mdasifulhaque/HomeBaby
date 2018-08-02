@@ -5,20 +5,26 @@ public class Patient {
 	private String patientName;
 	private Address address;
 	
-	public void onCreate() {
-		System.out.println("Patient Created:-"+this);
+	public static Patient getInstance(int patientId, String patientName) {
+		System.out.println("Creating Patient using factory method ");
+		return new Patient(123,"Jyoti");
 	}
+	public void onCreate() {
+		System.out.println("Patient Created:-" + this);
+	}
+
 	public void onDestroy() {
 		System.out.println("Patient Object Destroyed :( ");
 	}
+
 	public Patient() {
-		
+
 	}
 
 	public Patient(int patientId, String patientName) {
 		this.patientId = patientId;
-		this.patientName = patientName;		
-	
+		this.patientName = patientName;
+
 	}
 
 	public int getPatientId() {

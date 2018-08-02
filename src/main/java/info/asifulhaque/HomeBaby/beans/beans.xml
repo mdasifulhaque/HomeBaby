@@ -6,7 +6,8 @@
 
 
 	<bean class="info.asifulhaque.HomeBaby.Patient" id="patientBeans"
-		scope="prototype" destroy-method="onDestroy" init-method="onCreate">
+		scope="prototype" destroy-method="onDestroy" init-method="onCreate"
+		factory-method="getInstance">
 		<constructor-arg name="patientId" value="2"></constructor-arg>
 		<constructor-arg name="patientName" value="Leemon"></constructor-arg>
 		<property name="address" ref="addressBeans"></property>

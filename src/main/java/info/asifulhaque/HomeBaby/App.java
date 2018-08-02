@@ -7,18 +7,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-      ApplicationContext context=new ClassPathXmlApplicationContext("info/asifulhaque/HomeBaby/beans/beans.xml");
-      Patient patient=(Patient) context.getBean("patientBeans");
-      patient.setPatientName("Harry Puttar");
-      System.out.println(patient);
-      
-      //Not usable after Dependency injection
+public class App {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("info/asifulhaque/HomeBaby/beans/beans.xml");
+		Patient patient = (Patient) context.getBean("patientBeans");
+		System.out.println(patient);
+
+		// Not usable after Dependency injection
 //      Address address=(Address) context.getBean("addressBeans");
 //      System.out.println(address);
-      ((ClassPathXmlApplicationContext) context).close();
-    }
+		((ClassPathXmlApplicationContext) context).close();
+	}
 }
